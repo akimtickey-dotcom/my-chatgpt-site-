@@ -1,153 +1,322 @@
-export default function ZimFreshMarketWebsite() {
-  return (
-    <div className="min-h-screen bg-green-50 text-gray-800 font-sans">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-800 via-green-700 to-lime-600 text-white py-20 px-6 text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854')] bg-cover bg-center"></div>
-        <div className="relative z-10">
-        <h1 className="text-6xl md:text-7xl font-extrabold mb-6 tracking-tight">🌽 ZimFresh Market</h1>
-        <p className="text-xl max-w-2xl mx-auto">
-          Connecting Farmers & Buyers Across Zimbabwe
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZimFresh Market</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .hero-slide {
+      animation: zoom 20s infinite alternate;
+    }
+
+    @keyframes zoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
+    }
+
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .product-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .product-card img {
+      transition: 0.5s ease;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- HERO -->
+  <section class="relative min-h-screen overflow-hidden">
+    <div class="absolute inset-0 hero-slide">
+      <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80"
+        class="w-full h-full object-cover" />
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-[#064e3b]/90 via-[#064e3b]/70 to-black/50"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 flex flex-col justify-center min-h-screen">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-3 glass px-5 py-3 rounded-full border border-white/20 text-white mb-8">
+          <i class="fa-solid fa-leaf text-green-300"></i>
+          Zimbabwe Agricultural Marketplace
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8">
+          Empowering Farmers.
+          Feeding Businesses.
+          Growing Zimbabwe.
+        </h1>
+
+        <p class="text-xl text-slate-200 leading-9 mb-10 max-w-2xl">
+          ZimFresh Market connects verified farmers directly with restaurants, hotels, retailers, and bulk buyers through a premium agricultural supply network built for trust, speed, and reliability.
         </p>
-        <p className="mt-4 text-xl max-w-3xl mx-auto font-light leading-8">
-          Empowering Zimbabwean farmers while delivering trusted agricultural supply solutions to homes, restaurants, and businesses.
-        </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <div className="bg-white/20 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/30 shadow-lg">
-            ✅ Verified Farmers
-          </div>
-          <div className="bg-white/20 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/30 shadow-lg">
-            🚚 Reliable Delivery
-          </div>
-          <div className="bg-white/20 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/30 shadow-lg">
-            💳 Secure Transactions
-          </div>
-        </div>
-        <a
-          href="https://wa.me/"
-          className="inline-block mt-8 bg-white text-green-700 font-semibold px-6 py-3 rounded-2xl shadow-lg hover:scale-105 transition"
-        >
-          Contact Us on WhatsApp
-        </a>
-      </section>
+        <div class="flex flex-wrap gap-5">
+          <a href="https://wa.me/" class="bg-green-500 hover:bg-green-400 text-white px-8 py-4 rounded-2xl font-semibold shadow-2xl transition duration-300">
+            <i class="fa-brands fa-whatsapp mr-2"></i>Order via WhatsApp
+          </a>
 
-      {/* About Section */}
-      <section className="py-14 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-center">About ZimFresh Market</h2>
-        <p className="text-lg leading-8 text-center max-w-4xl mx-auto">
-          ZimFresh Market is a Zimbabwean platform that connects trusted local farmers directly with buyers.
-          Our goal is to make buying and selling agricultural products easier, faster, and more reliable.
-        </p>
-      </section>
-
-      {/* How It Works */}
-      <section className="bg-white py-14 px-6">
-        <h2 className="text-3xl font-bold text-center mb-10">How It Works</h2>
-
-        <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <div className="bg-green-100 rounded-3xl p-6 shadow-md">
-            <h3 className="font-bold text-xl mb-3">1️⃣ Buyers Order</h3>
-            <p>
-              Customers contact us through WhatsApp and request products.
-            </p>
-          </div>
-
-          <div className="bg-green-100 rounded-3xl p-6 shadow-md">
-            <h3 className="font-bold text-xl mb-3">2️⃣ Farmers Supply</h3>
-            <p>
-              Verified farmers provide fresh produce and confirm availability.
-            </p>
-          </div>
-
-          <div className="bg-green-100 rounded-3xl p-6 shadow-md">
-            <h3 className="font-bold text-xl mb-3">3️⃣ Delivery Arranged</h3>
-            <p>
-              Delivery or collection is arranged depending on customer location.
-            </p>
-          </div>
-
-          <div className="bg-green-100 rounded-3xl p-6 shadow-md">
-            <h3 className="font-bold text-xl mb-3">4️⃣ Safe Transactions</h3>
-            <p>
-              We help ensure smooth communication and trusted transactions.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Verification Section */}
-      <section className="py-14 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">Trust & Verification</h2>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-3xl shadow-md p-8">
-            <h3 className="text-2xl font-bold mb-4">🧑‍🌾 Farmer Verification</h3>
-            <ul className="space-y-3 text-lg">
-              <li>✅ Location confirmation</li>
-              <li>✅ Product photos & videos</li>
-              <li>✅ Small test orders recommended</li>
-              <li>✅ Trusted supplier system</li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-3xl shadow-md p-8">
-            <h3 className="text-2xl font-bold mb-4">🛒 Buyer Verification</h3>
-            <ul className="space-y-3 text-lg">
-              <li>✅ Order confirmation process</li>
-              <li>✅ Delivery location verification</li>
-              <li>✅ Secure communication</li>
-              <li>✅ Reliable customer support</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Payment Section */}
-      <section className="bg-green-700 text-white py-14 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-6">💳 Payment Methods</h2>
-
-        <div className="flex flex-wrap justify-center gap-4 text-lg">
-          <div className="bg-white text-green-700 px-5 py-3 rounded-2xl shadow-md">
-            Cash
-          </div>
-          <div className="bg-white text-green-700 px-5 py-3 rounded-2xl shadow-md">
-            Mobile Money
-          </div>
-          <div className="bg-white text-green-700 px-5 py-3 rounded-2xl shadow-md">
-            Bank Transfer
-          </div>
-          <div className="bg-white text-green-700 px-5 py-3 rounded-2xl shadow-md">
-            Cash on Delivery
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-6">📞 Contact Us</h2>
-
-        <div className="bg-white max-w-2xl mx-auto rounded-3xl shadow-lg p-8">
-          <p className="text-lg mb-3">📍 Harare, Zimbabwe</p>
-          <p className="text-lg mb-3">📧 akimtickey@gmail.com</p>
-          <p className="text-lg mb-6">📱 WhatsApp Business Available</p>
-
-          <a
-            href="https://wa.me/"
-            className="inline-block bg-green-700 text-white px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition"
-          >
-            Message on WhatsApp
+          <a href="#market" class="glass border border-white/20 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white/20 transition">
+            Live Market Prices
           </a>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white text-center py-6">
-        <p>© 2026 ZimFresh Market 🇿🇼</p>
-        <p className="mt-2 text-sm text-gray-300">
-          Fresh Produce • Fair Prices • Reliable Service
-        </p>
-      </footer>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-16">
+          <div class="glass rounded-3xl p-6 border border-white/10 text-white">
+            <h3 class="text-3xl font-bold">250+</h3>
+            <p class="text-slate-200 mt-2">Verified Farmers</p>
+          </div>
+
+          <div class="glass rounded-3xl p-6 border border-white/10 text-white">
+            <h3 class="text-3xl font-bold">98%</h3>
+            <p class="text-slate-200 mt-2">Delivery Reliability</p>
+          </div>
+
+          <div class="glass rounded-3xl p-6 border border-white/10 text-white">
+            <h3 class="text-3xl font-bold">24/7</h3>
+            <p class="text-slate-200 mt-2">Customer Support</p>
+          </div>
+        </div>
+      </div>
     </div>
-  );
-}
+  </section>
+
+  <!-- MARKET DATA -->
+  <section id="market" class="py-28 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold text-[#064e3b] mb-5">📈 Live Market Data</h2>
+        <p class="text-slate-600 text-lg max-w-3xl mx-auto">
+          Real-time agricultural pricing insights helping buyers and suppliers make informed decisions across Zimbabwe.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl shadow-2xl border border-slate-200">
+        <table class="w-full text-left bg-white">
+          <thead class="bg-[#064e3b] text-white">
+            <tr>
+              <th class="p-6">Product</th>
+              <th class="p-6">Grade</th>
+              <th class="p-6">Price / KG</th>
+              <th class="p-6">Trend</th>
+              <th class="p-6">Availability</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="border-b hover:bg-slate-50 transition">
+              <td class="p-6 font-semibold">🍅 Tomatoes</td>
+              <td class="p-6">Premium A</td>
+              <td class="p-6 font-bold text-green-700">$1.20</td>
+              <td class="p-6 text-green-600"><i class="fa-solid fa-arrow-trend-up"></i> Rising</td>
+              <td class="p-6"><span class="bg-green-100 text-green-700 px-4 py-2 rounded-full">High</span></td>
+            </tr>
+
+            <tr class="border-b hover:bg-slate-50 transition">
+              <td class="p-6 font-semibold">🌽 Maize</td>
+              <td class="p-6">Grade B</td>
+              <td class="p-6 font-bold text-green-700">$0.85</td>
+              <td class="p-6 text-red-500"><i class="fa-solid fa-arrow-trend-down"></i> Slight Drop</td>
+              <td class="p-6"><span class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full">Medium</span></td>
+            </tr>
+
+            <tr class="border-b hover:bg-slate-50 transition">
+              <td class="p-6 font-semibold">🥔 Potatoes</td>
+              <td class="p-6">Premium A</td>
+              <td class="p-6 font-bold text-green-700">$1.45</td>
+              <td class="p-6 text-green-600"><i class="fa-solid fa-arrow-trend-up"></i> Strong</td>
+              <td class="p-6"><span class="bg-green-100 text-green-700 px-4 py-2 rounded-full">Available</span></td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 transition">
+              <td class="p-6 font-semibold">🥚 Eggs</td>
+              <td class="p-6">Large Tray</td>
+              <td class="p-6 font-bold text-green-700">$4.00</td>
+              <td class="p-6 text-green-600"><i class="fa-solid fa-arrow-trend-up"></i> Stable</td>
+              <td class="p-6"><span class="bg-green-100 text-green-700 px-4 py-2 rounded-full">High</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="py-28 px-6 bg-slate-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold text-[#064e3b] mb-5">🌾 Premium Agricultural Products</h2>
+        <p class="text-slate-600 text-lg max-w-3xl mx-auto">
+          Carefully sourced fresh produce from trusted Zimbabwean farmers.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <div class="product-card bg-white rounded-[30px] overflow-hidden shadow-xl hover:shadow-2xl transition duration-500">
+          <div class="overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=1000&q=80" class="w-full h-72 object-cover">
+            <span class="absolute top-5 left-5 bg-green-600 text-white px-4 py-2 rounded-full text-sm">Fresh Stock</span>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3">Premium Tomatoes</h3>
+            <p class="text-slate-600 mb-6">Farm-fresh tomatoes ideal for hotels, restaurants, and retail supply chains.</p>
+            <a href="https://wa.me/" class="inline-block bg-[#064e3b] hover:bg-green-700 text-white px-6 py-3 rounded-2xl font-semibold transition">
+              <i class="fa-brands fa-whatsapp mr-2"></i>Order via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="product-card bg-white rounded-[30px] overflow-hidden shadow-xl hover:shadow-2xl transition duration-500">
+          <div class="overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=1000&q=80" class="w-full h-72 object-cover">
+            <span class="absolute top-5 left-5 bg-yellow-500 text-white px-4 py-2 rounded-full text-sm">Bulk Supply</span>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3">Quality Maize</h3>
+            <p class="text-slate-600 mb-6">Reliable maize supply for wholesalers, processors, and agricultural buyers.</p>
+            <a href="https://wa.me/" class="inline-block bg-[#064e3b] hover:bg-green-700 text-white px-6 py-3 rounded-2xl font-semibold transition">
+              <i class="fa-brands fa-whatsapp mr-2"></i>Order via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="product-card bg-white rounded-[30px] overflow-hidden shadow-xl hover:shadow-2xl transition duration-500">
+          <div class="overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?auto=format&fit=crop&w=1000&q=80" class="w-full h-72 object-cover">
+            <span class="absolute top-5 left-5 bg-red-500 text-white px-4 py-2 rounded-full text-sm">Fast Moving</span>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3">Fresh Potatoes</h3>
+            <p class="text-slate-600 mb-6">High-quality potatoes sourced directly from trusted local Zimbabwean farms.</p>
+            <a href="https://wa.me/" class="inline-block bg-[#064e3b] hover:bg-green-700 text-white px-6 py-3 rounded-2xl font-semibold transition">
+              <i class="fa-brands fa-whatsapp mr-2"></i>Order via WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-28 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold text-[#064e3b] mb-5">💬 Trusted By Buyers & Farmers</h2>
+        <p class="text-slate-600 text-lg">Building trust across Zimbabwe’s agricultural ecosystem.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <div class="bg-slate-50 p-10 rounded-[30px] shadow-lg border border-slate-100">
+          <div class="text-yellow-400 text-2xl mb-5">
+            ★★★★★
+          </div>
+          <p class="text-slate-700 leading-8 mb-6">
+            “ZimFresh Market helped our restaurant secure reliable fresh produce supply without delays. Excellent professionalism.”
+          </p>
+          <h4 class="font-bold text-[#064e3b]">— Victoria Hotel Procurement Team</h4>
+        </div>
+
+        <div class="bg-slate-50 p-10 rounded-[30px] shadow-lg border border-slate-100">
+          <div class="text-yellow-400 text-2xl mb-5">
+            ★★★★★
+          </div>
+          <p class="text-slate-700 leading-8 mb-6">
+            “As a farmer, I now reach buyers faster and avoid unnecessary middlemen. This platform creates real opportunities.”
+          </p>
+          <h4 class="font-bold text-[#064e3b]">— Local Farmer, Mashonaland</h4>
+        </div>
+
+        <div class="bg-slate-50 p-10 rounded-[30px] shadow-lg border border-slate-100">
+          <div class="text-yellow-400 text-2xl mb-5">
+            ★★★★★
+          </div>
+          <p class="text-slate-700 leading-8 mb-6">
+            “Reliable communication, transparent pricing, and smooth delivery coordination every time.”
+          </p>
+          <h4 class="font-bold text-[#064e3b]">— Harare Bulk Buyer</h4>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 bg-[#064e3b] text-white text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-5xl font-bold mb-8">Ready To Grow With ZimFresh Market?</h2>
+      <p class="text-xl text-slate-200 leading-9 mb-10">
+        Whether you are a farmer, restaurant, retailer, wholesaler, or investor — we are building the future of agricultural commerce in Zimbabwe.
+      </p>
+
+      <a href="https://wa.me/" class="bg-white text-[#064e3b] px-10 py-5 rounded-2xl font-bold text-lg hover:bg-slate-200 transition shadow-2xl">
+        <i class="fa-brands fa-whatsapp mr-2"></i>Contact Us Today
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-300 py-20 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
+
+      <div>
+        <h3 class="text-3xl font-bold text-white mb-5">🌽 ZimFresh Market</h3>
+        <p class="leading-8 text-slate-400">
+          Connecting Zimbabwean farmers directly with businesses and buyers through a trusted agricultural marketplace.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-5 text-xl">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="#market" class="hover:text-white">Market Prices</a></li>
+          <li><a href="#" class="hover:text-white">Products</a></li>
+          <li><a href="#" class="hover:text-white">Farmers Network</a></li>
+          <li><a href="#" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-5 text-xl">Contact</h4>
+        <ul class="space-y-4">
+          <li><i class="fa-solid fa-location-dot mr-2 text-green-500"></i>Harare, Zimbabwe</li>
+          <li><i class="fa-solid fa-envelope mr-2 text-green-500"></i>akimtickey@gmail.com</li>
+          <li><i class="fa-brands fa-whatsapp mr-2 text-green-500"></i>WhatsApp Business</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-5 text-xl">Our Mission</h4>
+        <p class="leading-8 text-slate-400">
+          Empowering local agriculture with technology, trust, and efficient supply chain connections.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-800 mt-16 pt-8 text-center text-slate-500">
+      © 2026 ZimFresh Market 🇿🇼 — Fresh Produce • Fair Prices • Reliable Service
+    </div>
+  </footer>
+
+</body>
+</html>
